@@ -1,7 +1,6 @@
 
 <div class="row" *ngIf="userArr.length > 0; else notod">
 
-  <!-- User Profile -->
   <div class="col-md-4">
     <mat-card>
 
@@ -9,12 +8,9 @@
         mat-card-image
         [src]="userDetail.profileImage"
         alt="User Profile">
-
       <h2 class="font-weight-bold">
         {{ userDetail.userName }}
       </h2>
-
-
       <p>({{ userDetail.userRole }})</p>
 
       <p>{{ userDetail.profileDescription }}</p>
@@ -42,13 +38,12 @@
     </mat-card>
   </div>
 
-  <!-- Basic Information -->
   <div class="col-md-8">
 
     <mat-card class="mb-5">
 
       <h3 class="font-weight-bold">
-        Basic Information
+  
       </h3>
 
       <p>
@@ -91,7 +86,6 @@
 
 </div>
 
-<!-- Invalid User -->
 <ng-template #notod>
   <p class="alert alert-danger">
     Please enter a valid user.

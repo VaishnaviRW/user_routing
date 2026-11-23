@@ -13,12 +13,10 @@ export class GetconfirmComponent {
     public dialogRef: MatDialogRef<GetconfirmComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {}
-
   onConfirm(): void {
     this.dialogRef.close(true);
   }
-
-  onCancel(): void {
+onCancel(): void {
     this.dialogRef.close(false);
   }
 }
