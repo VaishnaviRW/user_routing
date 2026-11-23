@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './shared/component/navbar/navbar.component';
@@ -21,10 +20,6 @@ import { AuthComponent } from './shared/component/auth/auth.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoaderInterceptor } from './shared/services/loader.interceptor';
 import { LoaderComponent } from './shared/component/loader/loader.component';
-
-
-
-
 
 @NgModule({
   declarations: [

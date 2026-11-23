@@ -1,7 +1,23 @@
-<mat-card>
-    <p>{{getmsg||'Are u sure delete dta nbase'}}</p>
-  <div class="d-flex justify-content-between">
-      <button mat-raised-button color="primary" (click)="onclose(true)">Yes</button>
-    <button mat-raised-button color="primary" (click)="onclose(false)">No</button>
+
+
+
+<mat-dialog-content>
+  {{ data.message }}
+</mat-dialog-content>
+
+<div class="d-flex justify-content-between">
+  <button mat-button  
+  color="primary"
+  (click)="onCancel()">
+    No
+  </button>
+
+  <button
+    mat-raised-button
+    color="warn"
+    (click)="onConfirm()">
+    Yes
+  </button>
   </div>
-</mat-card>
+
+
