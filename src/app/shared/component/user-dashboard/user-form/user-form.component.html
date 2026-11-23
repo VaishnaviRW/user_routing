@@ -1,0 +1,117 @@
+
+<div class="row">
+  <div class="col-sm-12">
+
+    <h2 class="font-weight-bold">
+      {{ isineditmode ? 'Update User' : 'Add User' }}
+    </h2>
+
+    <form [formGroup]="userform" (ngSubmit)="usersubmit()">
+
+      <!-- User Name -->
+      <div class="form-group">
+        <label for="userName">User Name</label>
+
+        <input
+          id="userName"
+          type="text"
+          class="form-control"
+          formControlName="userName"
+          placeholder="Enter user name">
+
+        <small class="text-danger"
+          *ngIf="formcotrol['userName'].touched && formcotrol['userName'].invalid">
+          User name is required.
+        </small>
+      </div>
+
+ 
+      <div class="form-group">
+        <label for="userRole">User Role</label>
+
+        <select
+          id="userRole"
+          class="form-control"
+          formControlName="userRole">
+
+          <option value="admin">Admin</option>
+          <option value="buyer">Buyer</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="profileDescription">Profile Description</label>
+
+        <textarea
+          id="profileDescription"
+          class="form-control"
+          formControlName="profileDescription"
+          placeholder="Enter description"
+          rows="3">
+        </textarea>
+      </div>
+
+      <!-- Profile Image -->
+      <div class="form-group">
+        <label for="profileImage">Profile Image URL</label>
+
+        <input
+          id="profileImage"
+          type="text"
+          class="form-control"
+          formControlName="profileImage"
+          placeholder="Enter image URL">
+      </div>
+
+      <!-- Experience -->
+      <div class="form-group">
+        <label for="experienceYears">Experience</label>
+
+        <input
+          id="experienceYears"
+          type="text"
+          class="form-control"
+          formControlName="experienceYears"
+          placeholder="e.g. 2 to 4 years">
+
+        <small class="text-danger"
+          *ngIf="formcotrol['experienceYears'].touched && formcotrol['experienceYears'].invalid">
+          Experience is required.
+        </small>
+      </div>
+
+      <!-- Status -->
+      <div class="form-group">
+        <label for="isActive">Status</label>
+
+        <select
+          id="isActive"
+          class="form-control"
+          formControlName="isActive">
+
+          <option [ngValue]="true">Active</option>
+          <option [ngValue]="false">Inactive</option>
+        </select>
+      </div>
+
+      <!-- Submit Button -->
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit">
+
+        {{ isineditmode ? 'Update User' : 'Add User' }}
+
+      </button>
+
+      <!-- Cancel Button -->
+      <button
+        type="button"
+        mat-button
+        routerLink="/user">
+        Cancel
+      </button>
+
+    </form>
+  </div>
+</div>

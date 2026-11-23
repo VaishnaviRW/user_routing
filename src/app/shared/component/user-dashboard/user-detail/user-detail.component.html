@@ -1,0 +1,98 @@
+
+<div class="row" *ngIf="userArr.length > 0; else notod">
+
+  <!-- User Profile -->
+  <div class="col-md-4">
+    <mat-card>
+
+      <img
+        mat-card-image
+        [src]="userDetail.profileImage"
+        alt="User Profile">
+
+      <h2 class="font-weight-bold">
+        {{ userDetail.userName }}
+      </h2>
+
+      <p>({{ userDetail.userRole }})</p>
+
+      <p>{{ userDetail.profileDescription }}</p>
+
+      <p>{{ userDetail.experienceYears }}</p>
+
+      <mat-card-actions class="d-flex justify-content-between">
+
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="onedit()">
+          Edit
+        </button>
+
+        <button
+          mat-raised-button
+          color="warn"
+          (click)="onremove(userDetail.userId)">
+          Delete
+        </button>
+
+      </mat-card-actions>
+
+    </mat-card>
+  </div>
+
+  <!-- Basic Information -->
+  <div class="col-md-8">
+
+    <mat-card class="mb-5">
+
+      <h3 class="font-weight-bold">
+        Basic Information
+      </h3>
+
+      <p>
+        <strong>User ID:</strong>
+        {{ userDetail.userId }}
+      </p>
+
+      <p>
+        <strong>User Name:</strong>
+        {{ userDetail.userName }}
+      </p>
+
+      <p>
+        <strong>User Role:</strong>
+        {{ userDetail.userRole }}
+      </p>
+
+      <p>
+        <strong>Experience:</strong>
+        {{ userDetail.experienceYears }}
+      </p>
+
+      <p>
+        <strong>Status:</strong>
+
+        <strong
+          class="badge"
+          [ngClass]="{
+            'badge-success': userDetail.isActive,
+            'badge-danger': !userDetail.isActive
+          }">
+          {{ userDetail.isActive ? 'Active' : 'Inactive' }}
+        </strong>
+
+      </p>
+
+    </mat-card>
+
+  </div>
+
+</div>
+
+<!-- Invalid User -->
+<ng-template #notod>
+  <p class="alert alert-danger">
+    Please enter a valid user.
+  </p>
+</ng-template>
